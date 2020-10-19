@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+	//credits: arjan_bal
+inline ll exp(ll x, ll n, ll m = MOD) {
+    ll r = 1;
+    while(n) {
+        if(n & 1) r = r * x % m;
+        x = x * x % m, n >>= 1;
+    }
+    return r;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modexp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
