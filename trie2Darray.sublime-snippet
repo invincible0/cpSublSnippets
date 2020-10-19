@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+const int MaxN = 500500;
+int sz = 0;
+
+int next[27][MaxN];
+int end[MaxN];
+bool created[MaxN];
+
+void insert (string &s) {
+	int v = 0;
+
+	for (int i = 0; i < s.size(); ++i) {
+		int c = s[i] - 'a';
+		if (!created[next[c][v]]) {
+			next[c][v] = ++sz;
+			created[sz] = true;
+		}
+		v = next[c][v];
+	}
+	++end[v];
+}
+
+bool search (string tmp) {
+	int v = 0;
+	
+	for (int i = 0; i < tmp.size(); ++i) {
+		int c = tmp[i] - 'a';
+		if (!created[next[c][v]])
+			return false;
+		v = next[c][v];
+	}
+	return end[v] > 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>trie2D</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
