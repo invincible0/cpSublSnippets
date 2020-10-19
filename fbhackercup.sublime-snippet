@@ -1,0 +1,57 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pii pair<int, int>
+#define pll pair<ll, ll>
+#define vi vector<int>
+#define vll vector<ll>
+#define vpii vector<pair<int,int>>
+#define vpll vector<pair<ll,ll>>
+#define fr(i,k,n) for (int i = k; i < n; ++i)
+#define fri(i,k,n) for (int i = k; i >= n; --i)
+#define pb push_back
+#define mp make_pair
+#define all(arr) arr.begin(),arr.end()
+#define ff first
+#define ss second
+#define endl '\n'
+
+const double pi=3.1415926535897932384626433832795;
+const int inf=1e9;
+const ll inf2=1e18;
+const int mod=1e9+7;
+
+void boost(){
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+}
+
+void solve(){
+
+	return;
+}
+
+int main()
+{
+	boost();
+	#ifndef ONLINE_JUDGE
+		freopen("input.txt","r",stdin);
+		freopen("output.txt","w",stdout);
+	#endif
+	int tc=1;
+	cin>>tc;
+	for(int i=1;i<=tc;i++){
+		cout<<"Case #"<<i<<": ";
+		solve();
+	}
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fbhackercup</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
