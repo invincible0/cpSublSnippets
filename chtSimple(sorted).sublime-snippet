@@ -1,0 +1,55 @@
+<snippet>
+	<content><![CDATA[
+//https://www.codechef.com/viewsolution/29357169
+struct cht{
+
+	deque<double> x;
+	deque<pair<double,double>> points;
+
+	void clear(){
+		x.clear();
+		points.clear();
+	}
+
+	cht(){
+		clear();
+	}
+
+	void insert(double m , double c){
+		
+		int n = points.size();
+		if(n == 0){
+			points.push_back({m,c});
+			return ;
+		}
+		
+		if(n == 1){
+			double x_cor = (c - points.back().second) / (points.back().first - m) ;
+			points.push_back({m,c});
+			x.push_back(x_cor);
+
+			return ;
+		}
+
+		while( n > 1 && (c-points[n-2].second)*(points[n-2].first-points[n-1].first) < (points[n-1].second-points[n-2].second)*(points[n-2].first-m) ){
+		       points.pop_back();	
+		       x.pop_back();
+		       n--;
+		}
+		
+		double x_cor = (c - points.back().second) / (points.back().first - m) ;
+		points.push_back({m,c});
+		x.push_back( x_cor );
+	}
+
+	int minval(double xc){
+		int j = lower_bound(x.begin(),x.end(),xc) - x.begin();
+	      	return points[j].first*xc + points[j].second;
+	}	
+}inn;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>chtStatic(sorted)</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
