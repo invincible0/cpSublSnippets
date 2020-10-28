@@ -1,19 +1,19 @@
 <snippet>
 	<content><![CDATA[
-ll spf[N];
+int spf[N];
 void sieve() 
 { 
     spf[1] = 1; 
-    for (ll i=2; i<N; i++) 
+    for (int i=2; i<N; i++) 
         spf[i] = i; 
-    for (ll i=4; i<N; i+=2) 
+    for (int i=4; i<N; i+=2) 
         spf[i] = 2; 
   
-    for (ll i=3; i*i<N; i++) 
+    for (int i=3; i*i<N; i++) 
     { 
         if (spf[i] == i) 
         { 
-            for (ll j=i*i; j<N; j+=i) 
+            for (int j=i*i; j<N; j+=i) 
                 if (spf[j]==j) 
                     spf[j] = i; 
         } 
